@@ -4,6 +4,7 @@
   "description": "Provides justfile syntax support for Just scripts.",
   "version": "1.0.1",
   "publisher": "skellock",
+  "private": true,
   "license": "MIT",
   "icon": "images/robot.png",
   "engines": {
@@ -23,13 +24,21 @@
     "url": "https://github.com/skellock/vscode-just/issues"
   },
   "homepage": "https://github.com/skellock/vscode-just",
-  "categories": ["Languages"],
+  "categories": [
+    "Languages"
+  ],
   "contributes": {
     "languages": [
       {
         "id": "just",
-        "aliases": ["Just", "just"],
-        "extensions": ["justfile", "Justfile"],
+        "aliases": [
+          "Just",
+          "just"
+        ],
+        "extensions": [
+          "justfile",
+          "Justfile"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
