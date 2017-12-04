@@ -12,6 +12,10 @@ currentBranch = `git rev-parse --abbrev-ref HEAD`
 # the number of unstaged changes in git
 currentStatus = `git status -s | wc -l | awk '$1=$1'`
 
+# lists the tasks (ensure this is task #1 in the list)
+@_list:
+  just --list
+
 # asks to set the new version number
 @bump:
   echo "----------------------"
