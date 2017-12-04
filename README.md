@@ -2,7 +2,7 @@
 
 A `Just` language syntax for colourizing your `justfile`s.
 
-\!\[Language Syntax\]\(images/just-demo.gif\)
+![Just in Code](images/just-demo.gif)
 
 
 # What is Just?
