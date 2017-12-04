@@ -2,7 +2,7 @@
   "name": "just",
   "displayName": "just",
   "description": "Provides syntax support for the Just scripts.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "skellock",
   "license": "MIT",
   "engines": {
