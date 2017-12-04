@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Just",
+  "patterns": [
+    { "include": "#interpolate" },
+    { "include": "#comments" },
+    { "include": "#scripts" },
+    { "include": "#strings" },
+    { "include": "#assignments" },
+    { "include": "#recipeDefinition" },
+    { "include": "#keywords" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.just",
+          "match": "^#[^!].*"
+        }
+      ]
+    },
+    "scripts": {
+      "patterns": [
+        {
+          "comment": "The #! lines within a recipe.",
+          "name": "support.type.property-name.just",
+          "begin": "\\s#\\!",
+          "end": "$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.triple.just",
+          "begin": "`",
+          "end": "`"
+        },
+        {
+          "name": "string.quoted.double.just",
+          "begin": "\"",
+          "end": "\""
+        },
+        {
+          "name": "string.quoted.single.just",
+          "begin": "'",
+          "end": "'"
+        }
+      ]
+    },
+    "assignments": {
+      "patterns": [
+        {
+          "match": "^(export[\\s]?)?([a-zA-Z_][a-zA-Z0-9_-]*)=",
+          "captures": {
+            "1": { "name": "storage.type.just" },
+            "2": { "name": "variable.name.just" }
+          }
+        }
+      ]
+    },
+    "recipeDefinition": {
+      "patterns": [
+        {
+          "match": "^(@)?([a-zA-Z_][a-zA-Z0-9_-]*)([a-zA-Z0-9=\\s_-`'\"]*):([\\sa-zA-Z0-9_-]*).*$",
+          "captures": {
+            "1": { "name": "entity.name.function.just" },
+            "2": { "name": "entity.name.function.just" },
+            "3": {
+              "patterns": [
+                {
+                  "name": "constant.character.escape.just",
+                  "match": "[\\s]*[a-zA-Z0-9-_]*(=?)(.*)",
+                  "captures": {
+                    "0": { "name": "variable.name.just" },
+                    "1": { "name": "constant.other.just" },
+                    "2": { "name": "variable.parameter.just" }
+                  }
+                }
+              ]
+            },
+            "4": { "name": "support.type.property-name.just" }
+          }
+        }
+      ]
+    },
+    "interpolate": {
+      "patterns": [
+        {
+          "name": "string.interpolated.just",
+          "begin": "\\{\\{",
+          "end": "\\}\\}"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.just",
+          "match": "\\b(arch|os|os_family|env_var|env_var_or_default)\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.just"
+}
