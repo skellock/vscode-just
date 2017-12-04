@@ -18,7 +18,7 @@ You:
 
 * create a file in your project directory called `justfile`
 * add some recipes
-* then run with `jest my-recipe` from the command line
+* then run with `just my-recipe` from the command line
 
 Here's a super quick and unhelpful example of a `justfile`:
 
