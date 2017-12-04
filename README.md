@@ -44,13 +44,3 @@ ruby:
   puts "yep."
 
 ```
-
-# Release Notes
-
-### 1.0.1 - Dec 4, 2017
-
-* Updated package.json with more meta data for vs code marketplace
-
-### 1.0.0 - Dec 3, 2017
-
-* Initial Release
