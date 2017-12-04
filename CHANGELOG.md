@@ -1,3 +1,9 @@
+# 1.0.3 - Dec 4, 2017
+
+### Docs
+
+* Fixes `just` spelling 😊 . PR: #1 thx @casey
+
 # 1.0.2 - Dec 4, 2017
 
 ### Maintenance
