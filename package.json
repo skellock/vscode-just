@@ -2,7 +2,7 @@
   "name": "just",
   "displayName": "just",
   "description": "Provides justfile syntax support for Just scripts.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "skellock",
   "private": true,
   "license": "MIT",
