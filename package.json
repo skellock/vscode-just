@@ -1,21 +1,26 @@
 {
   "name": "just",
   "displayName": "just",
-  "description": "Provides syntax support for the Just scripts.",
-  "version": "1.0.0",
+  "description": "Provides justfile syntax support for Just scripts.",
+  "version": "1.0.1",
   "publisher": "skellock",
   "license": "MIT",
+  "icon": "images/robot.png",
   "engines": {
     "vscode": "^1.18.0"
   },
   "keywords": [
     "just",
+    "justfile",
     "make",
     "scripts",
     "task"
   ],
   "repository": {
     "url": "https://github.com/skellock/vscode-just.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skellock/vscode-just/issues"
   },
   "homepage": "https://github.com/skellock/vscode-just",
   "categories": ["Languages"],
