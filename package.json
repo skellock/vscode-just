@@ -2,26 +2,56 @@
   "name": "just",
   "displayName": "just",
   "description": "Provides syntax and recipe launcher for Just scripts.",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "publisher": "skellock",
   "private": true,
   "license": "MIT",
   "icon": "images/robot.png",
-  "engines": { "vscode": "^1.18.0" },
-  "keywords": ["just", "justfile", "make", "scripts", "task", "recipe", "launch"],
-  "repository": { "url": "https://github.com/skellock/vscode-just.git" },
-  "bugs": { "url": "https://github.com/skellock/vscode-just/issues" },
+  "engines": {
+    "vscode": "^1.18.0"
+  },
+  "keywords": [
+    "just",
+    "justfile",
+    "make",
+    "scripts",
+    "task",
+    "recipe",
+    "launch"
+  ],
+  "repository": {
+    "url": "https://github.com/skellock/vscode-just.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skellock/vscode-just/issues"
+  },
   "homepage": "https://github.com/skellock/vscode-just",
-  "categories": ["Languages", "Other"],
+  "categories": [
+    "Languages",
+    "Other"
+  ],
   "main": "./out/extension",
-  "activationEvents": ["onCommand:just.run"],
+  "activationEvents": [
+    "onCommand:just.run"
+  ],
   "contributes": {
-    "commands": [{ "command": "just.run", "title": "Just: Run Recipe" }],
+    "commands": [
+      {
+        "command": "just.run",
+        "title": "Just: Run Recipe"
+      }
+    ],
     "languages": [
       {
         "id": "just",
-        "aliases": ["Just", "just"],
-        "extensions": ["justfile", "Justfile"],
+        "aliases": [
+          "Just",
+          "just"
+        ],
+        "extensions": [
+          "justfile",
+          "Justfile"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
