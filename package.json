@@ -1,44 +1,27 @@
 {
   "name": "just",
   "displayName": "just",
-  "description": "Provides justfile syntax support for Just scripts.",
+  "description": "Provides syntax and recipe launcher for Just scripts.",
   "version": "1.0.3",
   "publisher": "skellock",
   "private": true,
   "license": "MIT",
   "icon": "images/robot.png",
-  "engines": {
-    "vscode": "^1.18.0"
-  },
-  "keywords": [
-    "just",
-    "justfile",
-    "make",
-    "scripts",
-    "task"
-  ],
-  "repository": {
-    "url": "https://github.com/skellock/vscode-just.git"
-  },
-  "bugs": {
-    "url": "https://github.com/skellock/vscode-just/issues"
-  },
+  "engines": { "vscode": "^1.18.0" },
+  "keywords": ["just", "justfile", "make", "scripts", "task", "recipe", "launch"],
+  "repository": { "url": "https://github.com/skellock/vscode-just.git" },
+  "bugs": { "url": "https://github.com/skellock/vscode-just/issues" },
   "homepage": "https://github.com/skellock/vscode-just",
-  "categories": [
-    "Languages"
-  ],
+  "categories": ["Languages", "Other"],
+  "main": "./out/extension",
+  "activationEvents": ["onCommand:just.run"],
   "contributes": {
+    "commands": [{ "command": "just.run", "title": "Just: Run Recipe" }],
     "languages": [
       {
         "id": "just",
-        "aliases": [
-          "Just",
-          "just"
-        ],
-        "extensions": [
-          "justfile",
-          "Justfile"
-        ],
+        "aliases": ["Just", "just"],
+        "extensions": ["justfile", "Justfile"],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -49,5 +32,23 @@
         "path": "./syntaxes/just.tmLanguage.json"
       }
     ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/execa": "^0.8.0",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "prettier": "^1.9.1",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6"
+  },
+  "dependencies": {
+    "execa": "^0.8.0"
   }
 }
