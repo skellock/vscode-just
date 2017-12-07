@@ -37,3 +37,8 @@ currentStatus = `git status -s | wc -l | awk '$1=$1'`
 # releases on marketplace
 @publish:
   vsce publish
+
+# This does nothing but echoes hello.
+@hello:
+  echo "hello!"
+

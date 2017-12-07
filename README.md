@@ -1,18 +1,29 @@
 # just
 
-A `Just` language syntax for colourizing your `justfile`s.
+A `Just` language syntax for colourizing your `justfile`s and running recipes.
 
 ![Just in Code](images/just-demo.gif)
 
+# Running A Recipe
+
+* `cmd + shift + p` then type `Just: Run Recipe`
+* choose a recipe and press enter
 
 # What is Just?
 
-Just is a task runner. It's a single binary with no dependencies. Small & fast.
+Just is a task/command/recipe runner. It's a single binary with no dependencies. Small & fast.
 
 [Read more](https://github.com/casey/just) about it on their github page.
 
+# Roadmap
 
-# Just Basics
+* [x] syntax highlighting
+* [x] run recipe
+* [ ] pass arguments to recipes
+* [ ] choose a non-default justfile
+* [ ] tree extension showing recipies and dependencies
+
+# About Just
 
 You:
 
@@ -42,5 +53,4 @@ js:
 ruby:
   #!/usr/bin/env ruby
   puts "yep."
-
 ```
