@@ -21,11 +21,107 @@
     },
     "scripts": {
       "patterns": [
+        {"include": "#scripts_js"},
+        {"include": "#scripts_lua"},
+        {"include": "#scripts_perl"},
+        {"include": "#scripts_ruby"},
+        {"include": "#scripts_python"},
+        {"include": "#scripts_shell"}
+      ]
+    },
+    "scripts_python": {
+      "patterns": [
         {
-          "comment": "The #! lines within a recipe.",
-          "name": "support.type.property-name.just",
-          "begin": "\\s#\\!",
-          "end": "$"
+          "name": "markup.fenced_code.block.just",
+          "begin": "(^\\s+)(#!)\\s*(\\S+) (python3?)\\s*$",
+          "end": "^$",
+          "beginCaptures": {
+            "2":{"name":"markup.italic"},
+            "3":{"name":"markup.italic"},
+            "4":{"name":"keyword.other"}
+          },
+          "contentName":"meta.embedded.block.python",
+          "patterns": [{"include": "source.python"}]
+        }
+      ]
+    },
+    "scripts_js": {
+      "patterns": [
+        {
+          "name": "markup.fenced_code.block.just",
+          "begin": "(^\\s+)(#!)\\s*(\\S+) (node)\\s*$",
+          "end": "^$",
+          "beginCaptures": {
+            "2":{"name":"markup.italic"},
+            "3":{"name":"markup.italic"},
+            "4":{"name":"keyword.other"}
+          },
+          "contentName":"meta.embedded.block.javascript",
+          "patterns": [{"include": "source.js"}]
+        }
+      ]
+    },
+    "scripts_perl": {
+      "patterns": [
+        {
+          "name": "markup.fenced_code.block.just",
+          "begin": "(^\\s+)(#!)\\s*(\\S+) (perl)\\s*$",
+          "end": "^$",
+          "beginCaptures": {
+            "2":{"name":"markup.italic"},
+            "3":{"name":"markup.italic"},
+            "4":{"name":"keyword.other"}
+          },
+          "contentName":"meta.embedded.block.perl",
+          "patterns": [{"include": "source.perl"}]
+        }
+      ]
+    },
+    "scripts_ruby": {
+      "patterns": [
+        {
+          "name": "markup.fenced_code.block.just",
+          "begin": "(^\\s+)(#!)\\s*(\\S+) (ruby)\\s*$",
+          "end": "^$",
+          "beginCaptures": {
+            "2":{"name":"markup.italic"},
+            "3":{"name":"markup.italic"},
+            "4":{"name":"keyword.other"}
+          },
+          "contentName":"meta.embedded.block.ruby",
+          "patterns": [{"include": "source.ruby"}]
+        }
+      ]
+    },
+    "scripts_lua": {
+      "patterns": [
+        {
+          "name": "markup.fenced_code.block.just",
+          "begin": "(^\\s+)(#!)\\s*(\\S+) (lua)\\s*$",
+          "end": "^$",
+          "beginCaptures": {
+            "2":{"name":"markup.italic"},
+            "3":{"name":"markup.italic"},
+            "4":{"name":"keyword.other"}
+          },
+          "contentName":"meta.embedded.block.lua",
+          "patterns": [{"include": "source.lua"}]
+        }
+      ]
+    },
+    "scripts_shell": {
+      "patterns": [
+        {
+          "name": "markup.fenced_code.block.just",
+          "begin": "(^\\s+)(#!)\\s*(\\S+) ((?>fi|ba|c|k|z)?sh)\\s*$",
+          "end": "^$",
+          "beginCaptures": {
+            "2":{"name":"markup.italic"},
+            "3":{"name":"markup.italic"},
+            "4":{"name":"keyword.other"}
+          },
+          "contentName":"meta.embedded.block.shellscript",
+          "patterns": [{"include": "source.shell"}]
         }
       ]
     },
@@ -51,7 +147,7 @@
     "assignments": {
       "patterns": [
         {
-          "match": "^(export[\\s]?)?([a-zA-Z_][a-zA-Z0-9_-]*)=",
+          "match": "^(export[\\s]?)?([a-zA-Z_][a-zA-Z0-9_-]*)\\s*:?=",
           "captures": {
             "1": { "name": "storage.type.just" },
             "2": { "name": "variable.name.just" }
